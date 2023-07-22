@@ -30,4 +30,10 @@ app.post("/cadastro", (req, res) => {
   res.render("cadastro");
 });
 
+
+app.get("/formulario", (req, res) => {
+  const lista = fs.readFileSync('\pacientes.txt', 'utf8');
+  res.render("formulario", { lista });
+});
+
 app.listen(5000);
