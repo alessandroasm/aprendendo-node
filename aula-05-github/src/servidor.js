@@ -40,3 +40,5 @@ app.get("/formulario", (req, res) => {
 });
 
 app.listen(5000);
+
+console.log("Teste");
