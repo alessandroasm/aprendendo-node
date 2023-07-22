@@ -30,10 +30,13 @@ app.post("/cadastro", (req, res) => {
   res.render("cadastro");
 });
 
-
 app.get("/formulario", (req, res) => {
-  const lista = fs.readFileSync('\pacientes.txt', 'utf8');
-  res.render("formulario", { lista });
+  const lista = fs.readFileSync("./pacientes.txt", "utf8");
+  const linhas = lista.split("\n");
+  linhas.reverse();
+  const lista2 = linhas.join("\n");
+
+  res.render("formulario", { lista: lista2 });
 });
 
 app.listen(5000);
