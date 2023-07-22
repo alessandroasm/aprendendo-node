@@ -34,9 +34,20 @@ app.get("/formulario", (req, res) => {
   const lista = fs.readFileSync("./pacientes.txt", "utf8");
   const linhas = lista.split("\n");
   linhas.reverse();
-  const lista2 = linhas.join("\n");
+  //const lista2 = linhas.join("\n");
 
-  res.render("formulario", { lista: lista2 });
+  const pacientes = linhas.map((item) => {
+    const [nome, idade, peso, sintoma, data] = item.split(";");
+    return {
+      nome,
+      idade,
+      peso,
+      sintoma,
+      data,
+    };
+  });
+
+  res.render("formulario", { lista: "Lista de pacientes:", pacientes });
 });
 
 app.listen(5000);
