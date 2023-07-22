@@ -1,16 +1,73 @@
-<h1>Cadastro de Pacientes</h1>
+<div class="container">
+    <div class="texto">
+        <h1>Cadastro de Pacientes</h1>
 
-<form>
-    Nome: <br />
-    Idade: <br />
-    Peso: <br />
-    Sintoma: <br />
+        <style>
+            body {
+                .container {
+                    position: relative;
+                    width: 100%;
+                    height: 87vh;
+                    background-image: url('https://i3.wp.com/blog.iclinic.com.br/wp-content/uploads/2023/01/sistema-de-controle-de-cadastro-dos-pacientes-tablet.jpg');
+                    background-size: cover;
+                }
 
-    Data (mas o sistema preenche sozinho - luxon)
+                .texto {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background-color: rgba(0, 0, 0, 0.5);
+                    padding: 20px;
+                    color: white;
+                    text-align: center;
+                }
 
-    <br />
-    <br />
-    Botão cadastrar
-</form>
+            }
+        </style>
 
-<a href="/">Home</a>
+        <form action="/cadastro" method="post">
+            <label>
+                Nome:
+                <input name="nome" />
+            </label>
+
+            <label>
+                Idade:
+                <input name="idade" />
+            </label>
+            <br />
+            <br />
+            <label>
+                Peso:
+                <input name="peso" />
+            </label>
+
+            <label>
+                Sintoma:
+                <input name="sintoma" />
+            </label>
+            <br />
+            <br />
+            <button type="submit">Cadastrar</button>
+            <a href="http://localhost:5000" style="appearance: auto;text-rendering: auto;
+    color: buttontext;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: center;    cursor: default;
+    box-sizing: border-box;
+    background-color: buttonface;
+    margin: 0em;
+    padding: 1px 6px;
+    border-width: 2px;
+    border-style: outset;
+    border-color: buttonborder;
+    border-image: initial; text-decoration: none">Voltar</a>
+        </form>
+    </div>
+</div>

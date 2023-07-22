@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Exemplo de Texto em Linhas Separadas</title>
+    <style>
+        /* Estilos para organizar o texto */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f7f7f7;
+        }
+
+        .conteudo {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            white-space: pre-line;
+        }
+
+        .conteudo h1 {
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .conteudo p {
+            text-align: justify;
+            margin-bottom: 10px;
+        }
+
+        .link {
+            position: absolute;
+            top: 231px;
+            right: 44%;
+            transform: translateX(-50%);
+            padding: 10px 20px;
+            background: linear-gradient(45deg, #47a85c, #3e9237);
+            border: none;
+            border-radius: 30px;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s ease;
+            text-decoration: none;
+        }
+
+        .link:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="conteudo">
+        <h1>Formulário</h1>
+        <p>
+            <a href="http://localhost:5000" class="link">Voltar</a>
+        </p>
+        {{ lista }}
+    </div>
+</body>
+
+</html>
