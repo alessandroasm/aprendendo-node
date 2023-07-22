@@ -38,13 +38,22 @@ app.get("/formulario", (req, res) => {
 
   const pacientes = linhas.map((item) => {
     const [nome, idade, peso, sintoma, data] = item.split(";");
-    return {
+
+    // Converter data de string para luxon
+    const dataLuxon = luxon.DateTime.fromISO(data);
+
+    // Formatar o luxon em DD/MM/YYYY
+    const dataFormatada = dataLuxon.toFormat("dd/MM/yyyy");
+
+    const paciente = {
       nome,
       idade,
       peso,
-      sintoma,
-      data,
+      sintoma: sintoma,
+      data: dataFormatada,
     };
+
+    return paciente;
   });
 
   res.render("formulario", { lista: "Lista de pacientes:", pacientes });

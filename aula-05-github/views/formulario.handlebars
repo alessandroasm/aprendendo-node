@@ -20,7 +20,7 @@
             border: 1px solid #ccc;
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            white-space: pre-line;
+            /* white-space: pre-line; */
         }
 
         .conteudo h1 {
@@ -73,9 +73,14 @@
         {{#each pacientes }}
             <div class="paciente">
                 Nome: <b>{{ this.nome }}</b>
+                <br />
                 Idade: {{ this.idade }} anos
+                <br />
                 Peso: {{ this.peso }} Kg
+                <br />
                 Sintoma: {{ this.sintoma }}
+                <br />
+                Data: {{ this.data }}
             </div>
         {{/each}}
     </div>
