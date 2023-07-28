@@ -1,0 +1,47 @@
+<h1>Cadastro de Pacientes</h1>
+<html>
+  <head>
+    <style type="text/css">
+      label { font-family: system-ui; font-size: small; width: 100%; } input {
+      font-family: system-ui; border: 1px solid gray; padding-left: 2px; width:
+      100%; background-color: #DCDCDC ; } a { background-color: rgba(4, 94, 31,
+      0.459); color: white; font-family: system-ui; font-size: small; border:
+      1px solid; border-radius: 5px; text-decoration: none; padding: 5px; }
+    </style>
+  </head>
+
+  <body>
+    <form action="/cadastro" method="post">
+
+      <label>
+        Nome:
+        <br />
+        <input type="text" name="nome" />
+        <br />
+
+        Idade:
+        <br />
+        <input type="text" name="idade" />
+        <br />
+
+        Peso:
+        <br />
+        <input type="text" name="peso" />
+        <br />
+
+        Sintoma:
+        <br />
+        <input type="text" name="sintoma" />
+        <br />
+
+      </label>
+
+      <br />
+      <br />
+
+      <button type="submit">Cadastrar</button>
+    </form>
+  </body>
+</html>
+<a href="/">Voltar para o Início</a>
+<a href="/pacientes">Ver Prontuários</a>

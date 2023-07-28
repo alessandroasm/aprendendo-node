@@ -1,0 +1,122 @@
+<h1>Cadastro de Medicamentos</h1>
+<html>
+  <head>
+    <style type="text/css">
+      label { font-family: system-ui; font-size: small; width: 100%; } input {
+      font-family: system-ui; border: 1px solid gray; padding-left: 2px; width:
+      100%; background-color: #DCDCDC ; } a { background-color: rgba(4, 94, 31,
+      0.459); color: white; font-family: system-ui; font-size: small; border:
+      1px solid; border-radius: 5px; text-decoration: none; padding: 5px; }
+      fieldset { font-family: system-ui; font-size: small; margin-left: 0px;
+      background-color: #DCDCDC; border: 1px solid gray; padding-left: 2px; }
+    </style>
+  </head>
+
+  <body>
+    <form action="/cadastromed" method="post">
+
+      <label>
+        Nome do Medicamento:
+        <br />
+        <input type="text" name="nomedomedicamento" maxlength="50" />
+        <br />
+      </label>
+      <br />
+
+      <label type="text" name="tipo">
+        Tipo:
+        <br />
+        <fieldset>
+          <div>
+            <input
+              type="checkbox"
+              value="Analgésico"
+              name="tipo"
+              style="margin-left: -698px"
+            />
+            <label
+              for="analgesico"
+              style="margin-left: -700px"
+            >Analgésico</label>
+          </div>
+
+          <div>
+            <input
+              type="checkbox"
+              value="Vitamina"
+              name="tipo"
+              style="margin-left: -698px"
+            />
+            <label for="vitamina" style="margin-left: -700px">Vitamina</label>
+          </div>
+
+          <div>
+            <input
+              type="checkbox"
+              value="Vacina"
+              name="tipo"
+              style="margin-left: -698px"
+            />
+            <label for="vacina" style="margin-left: -700px">Vacina</label>
+          </div>
+
+          <div>
+            <input
+              type="checkbox"
+              value="Suplemento"
+              name="tipo"
+              style="margin-left: -698px"
+            />
+            <label
+              for="suplemento"
+              style="margin-left: -700px"
+            >Suplemento</label>
+          </div>
+        </fieldset>
+
+      </label>
+      <br />
+
+      <label>
+        Medida:
+        <br />
+        <input type="number" name="medida" />
+        <br />
+      </label>
+      <br />
+
+      <label>
+        Unidade:
+        <br />
+        <select name="unidade" style="background-color: #DCDCDC">
+          <option value="mL">mL</option>
+          <option value="mg">mg</option>
+        </select>
+        <br />
+      </label>
+      <br />
+
+      <label>
+        Laboratório:
+        <br />
+        <input type="text" name="laboratorio" maxlength="100" />
+        <br />
+      </label>
+      <br />
+
+      <label>
+        Email:
+        <br />
+        <input type="email" name="email" />
+        <br />
+      </label>
+
+      <br />
+      <br />
+
+      <button type="submit">Cadastrar</button>
+    </form>
+  </body>
+</html>
+<a href="/">Voltar para o Início</a>
+<a href="/medicamentos">Ver Medicamentos</a>

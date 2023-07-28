@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <style type="text/css">
+    form {
+    font-family: system-ui;
+    font-size: small;
+    }
+    
+    .conteudo {
+    font-family: system-ui;
+    font-size: small;
+    }
+
+    .paciente {
+    border: 1px solid #ccc;
+    margin-bottom: 5px;
+    }
+    
+    a {
+    background-color: rgba(4, 94, 31, 0.459);
+    color: white;
+    font-family: system-ui;
+    font-size: small;
+    border: 1px solid;
+    border-radius: 5px;
+    text-decoration: none;
+    padding: 5px;
+    }
+
+    </style>
+  </head>
+
+  <body>
+      <div class="conteudo">
+        <p><b>Prontuários cadastrados:</b></p>
+       
+        {{ lista }}
+        {{#each pacientes }}
+            <div class="paciente">
+                Nome: <b>{{ this.nome }}</b>
+                <br />
+                Idade: {{ this.idade }} anos
+                <br />
+                Peso: {{ this.peso }} Kg
+                <br />
+                Sintoma: {{ this.sintoma }}
+                <br />
+                Data: {{ this.data }}
+            </div>
+        {{/each}}
+
+        <p>
+        <a href="/">Voltar para o Início</a>
+        </p>
+      </div>
+  </body>

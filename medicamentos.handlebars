@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <style type="text/css">
+    form {
+    font-family: system-ui;
+    font-size: small;
+    }
+    
+    .conteudo {
+    font-family: system-ui;
+    font-size: small;
+    }
+
+    .medicamento {
+    border: 1px solid #ccc;
+    margin-bottom: 5px;
+    }
+    
+    a {
+    background-color: rgba(4, 94, 31, 0.459);
+    color: white;
+    font-family: system-ui;
+    font-size: small;
+    border: 1px solid;
+    border-radius: 5px;
+    text-decoration: none;
+    padding: 5px;
+    }
+
+    </style>
+  </head>
+
+  <body>
+      <div class="conteudo">
+        <p><b>Medicamentos cadastrados:</b></p>
+       
+        {{ lista3 }}
+        {{#each medicamentos }}
+            <div class="medicamento">
+                Nome do Medicamento: <b>{{ this.nomedomedicamento }}</b>
+                <br />
+                Tipo: {{ this.tipo }}
+                <br />
+                Medida: {{ this.medida }} 
+                <br />
+                Unidade: {{ this.unidade }}
+                <br />
+                Laboratório: {{ this.laboratorio }}
+                <br />
+                Email: {{ this.email }}
+                
+            </div>
+        {{/each}}
+
+        <p>
+        <a href="/">Voltar para o Início</a>
+        </p>
+      </div>
+  </body>

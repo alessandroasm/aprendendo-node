@@ -1,0 +1,4 @@
+Dipirona;Analgésico;30;500;EuroFarma;carolinemenezes20@gmail.com
+Dipirona;Analgésico;30;500;EuroFarma;carolinemenezes20@gmail.com
+Dipirona;Analgésico;30;500;EuroFarma;carolinemenezes20@gmail.com
+Dipirona;Analgésico;500;mg;EuroFarma;carolinemenezes20@gmail.com
