@@ -25,7 +25,70 @@
         .slideshow img.active {
             opacity: 1;
         }
+
+        /* Resetando as margens e preenchimentos padrões do navegador */
+        body,
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Estilizando o menu */
+        .menu-container {
+            position: absolute;
+            top: 10px;
+            /* Distância do topo da página */
+            right: 10px;
+            /* Distância da direita da página */
+            background-color: #3e9237;
+            padding: 10px;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+        }
+
+        li {
+            position: relative;
+            margin: 0 10px;
+        }
+
+        a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 34px;
+            text-align: center;
+        }
+
+        a:hover {
+            background-color: #3e9237;
+        }
+
+        /* Estilizando o submenu */
+        .submenu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #165010;
+        }
+
+        li:hover .submenu {
+            display: block;
+        }
+
+        .submenu li {
+            margin: 0;
+        }
+
+        .submenu a {
+            display: block;
+            padding: 10px;
+        }
     </style>
+
+
 </head>
 
 <body>
@@ -58,45 +121,30 @@
         }
 
         setInterval(nextSlide, 2000); // Tempo de exibição de cada imagem em milissegundos
+
     </script>
 
-</body>
+    <title>Meu Site</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link para o arquivo de estilos CSS -->
+    </head>
+
+    <body>
+        <nav class="menu-container">
+            <ul>
+                <li>
+                    <a href="#" class="menu-toggle">Cadastro | Formulário</a>
+                    <ul class="submenu">
+                        <li><a href="http://localhost:5000/cadastro">Cadastro de pacientes</a></li>
+                        <li><a href="http://localhost:5000/formulario">Formulário de pacientes</a></li>
+                        <li><a href="http://localhost:5000/cdmedicamentos">Cadastro de medicamentos</a></li>
+                        <li><a href="http://localhost:5000/formedicamentos">Formulário de medicamentos</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+
+
+    </body>
 
 </html>
-
-
-<a href="/cadastro" style="
-    position: fixed;
-    top: 23px;
-    right: 240px;
-    padding: 10px 20px;
-    background: linear-gradient(45deg, #47a85c, #3e9237);
-    border: none;
-    border-radius: 30px;
-    color: #fff;
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    cursor: pointer;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    transition: background 0.3s ease;
-    text-decoration: none;
-    }
-    
-">Cadastrar pacientes</a>
-
-<a href="/formulario" style="
-    position: fixed;
-    top: 23px;
-    right: 20px;
-    padding: 10px 20px;
-    background: linear-gradient(45deg, #47a85c, #3e9237);
-    border: none;
-    border-radius: 30px;
-    color: #fff;
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    cursor: pointer;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    transition: background 0.3s ease;
-    text-decoration: none;
-    ">Formulário de cadastro</a>

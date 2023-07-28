@@ -65,17 +65,19 @@
 
 <body>
     <div class="conteudo">
-        <h1>Formulário</h1>
+        <h1>Formulário medicamentos</h1>
         <p>
             <a href="http://localhost:5000" class="link">Voltar</a>
         </p>
         {{ lista }}
-        {{#each pacientes }}
-        <div class="paciente">
+        {{#each medicamentos }}
+        <div class="medicamentos">
             Nome: <b>{{ this.nome }}</b>
-            Idade: {{ this.idade }} anos
-            Peso: {{ this.peso }} Kg
-            Sintoma: {{ this.sintoma }}
+            Tipo: {{ this.tipo }}
+            Medida: {{ this.medida }}
+            Unidade: {{ this.unidade }}
+            Laboratório: {{ this.laboratorio }}
+            E-mail: {{ this.email }}
         </div>
         {{/each}}
     </div>

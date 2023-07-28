@@ -1,6 +1,6 @@
-<div class="container">
+2<div class="container">
     <div class="texto">
-        <h1>Cadastro de Pacientes</h1>
+        <h1>Cadastro de medicamentos</h1>
 
         <style>
             body {
@@ -26,28 +26,49 @@
             }
         </style>
 
-        <form action="/cadastro" method="post">
+        <form action="/cdmedicamentos" method="post">
             <label>
                 Nome:
-                <input name="nome" />
+                <input name="nome" maxlength="50" />
             </label>
             <br />
             <br />
             <label>
-                Idade:
-                <input name="idade" />
+                Tipo:
+
+                <select name="tipo">
+                    <option value="Analgésico">Analgésico</option>
+                    <option value="Vitamina">Vitamina</option>
+                    <option value="Vacina">Vacina</option>
+                    <option value="Suplemento">Suplemento</option>
+                </select>
             </label>
             <br />
             <br />
             <label>
-                Peso:
-                <input name="peso" />
+                Medida:
+                <input name="medida" />
             </label>
             <br />
             <br />
             <label>
-                Sintoma:
-                <input name="sintoma" />
+                Unidade:
+                <select name="unidade" id="unidade">
+                    <option value="ml">ml</option>
+                    <option value="mg">mg</option>
+                </select>
+            </label>
+            <br />
+            <br />
+            Laboratório:
+            <input name="laboratorio" maxlength="100" />
+            </label>
+            <br />
+            <br />
+            <label>
+                E-mail:
+                <input name="email" />
+
             </label>
             <br />
             <br />

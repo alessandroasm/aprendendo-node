@@ -50,4 +50,39 @@ app.get("/formulario", (req, res) => {
   res.render("formulario", { lista: "Lista de pacientes:", pacientes });
 });
 
+app.get("/cdmedicamentos", (req, res) => {
+  res.render("cdmedicamentos");
+});
+
+app.post("/cdmedicamentos", (req, res) => {
+  const { nome, tipo, medida, unidade, laboratorio, email } = req.body;
+
+  const medicamentos = `${nome};${tipo};${medida};${unidade};${laboratorio};${email}\n`;
+  fs.appendFileSync("./medicamentos.txt", medicamentos);
+
+  res.render("cdmedicamentos");
+});
+
+app.get("/formedicamentos", (req, res) => {
+  const lista = fs.readFileSync("./medicamentos.txt", "utf8");
+  const linhas = lista.split("\n");
+  linhas.reverse();
+  //const lista2 = linhas.join("\n");
+
+  const medicamentos = linhas.map((item) => {
+    const [nome, tipo, medida, unidade, laboratorio, email] = item.split(";");
+    return {
+      nome,
+      tipo,
+      medida,
+      unidade,
+      laboratorio,
+      email,
+    };
+  });
+
+  res.render("formedicamentos", { lista: "Lista de medicamentos:", medicamentos });
+});
+
 app.listen(5000);
+
