@@ -3,6 +3,7 @@ const { engine } = require("express-handlebars");
 const bodyParser = require("body-parser");
 const luxon = require("luxon");
 const fs = require("fs");
+const pg = require("pg");
 
 const app = express();
 
@@ -63,38 +64,42 @@ app.get("/cadastromed", (req, res) => {
   res.render("cadastromed");
 });
 
-app.post("/cadastromed", (req, res) => {
+async function conectarBanco() {
+  const client = new pg.Client({
+    host: "192.168.30.2",
+    database: "aula-node",
+    user: "cedoc",
+    password: "cedocpass",
+  });
+  await client.connect();
+
+  return client;
+}
+
+app.post("/cadastromed", async (req, res) => {
   const { nomedomedicamento, tipo, medida, unidade, laboratorio, email } =
     req.body;
 
-  const medicamento = `${nomedomedicamento};${tipo};${medida};${unidade};${laboratorio};${email}\n`;
-  fs.appendFileSync("./medicamentos.txt", medicamento);
+  const client = await conectarBanco();
+  await client.query(
+    `
+  insert into medicamentos (nome, unidade, medida, tipo, laboratorio, email)
+  values ($1, $2, $3, $4, $5, $6)
+  `,
+    [nomedomedicamento, unidade, medida, tipo, laboratorio, email]
+  );
 
   res.render("cadastromed");
 });
 
-app.get("/medicamentos", (req, res) => {
-  const lista3 = fs.readFileSync("./medicamentos.txt", "utf8");
-  const linhas = lista3.split("\n").filter((linha) => linha != "");
-  linhas.reverse();
+app.get("/medicamentos", async (req, res) => {
+  const client = await conectarBanco();
+  const resultado = await client.query(`
+  select *
+  from medicamentos
+  order by nome`);
 
-  //const lista4 = linhas.join("\n");
-
-  const medicamentos = linhas.map((item) => {
-    const [nomedomedicamento, tipo, medida, unidade, laboratorio, email] =
-      item.split(";");
-    const medicamento = {
-      nomedomedicamento,
-      tipo,
-      medida,
-      unidade,
-      laboratorio,
-      email,
-    };
-
-    return medicamento;
-  });
-
+  const medicamentos = resultado.rows;
   res.render("medicamentos", { lista3: "", medicamentos });
 });
 
