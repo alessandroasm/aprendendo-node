@@ -65,7 +65,7 @@ app.post("/cdmedicamentos", (req, res) => {
 
 app.get("/formedicamentos", (req, res) => {
   const lista = fs.readFileSync("./medicamentos.txt", "utf8");
-  const linhas = lista.split("\n");
+  const linhas = lista.split("\n").filter(linha => linha != "");
   linhas.reverse();
   //const lista2 = linhas.join("\n");
 

@@ -33,3 +33,5 @@ remedio;Analgésico;50;mg;biooink;danilosousa100@hotmail.com
 ;Suplemento;;ml;;
 ;Analgésico;;ml;;
 loucura;Analgésico;500;mg;doidao;danilosousa100@hotmail.com
+sorine;Analgésico;10;ml;bioclin;danilosousa100@hotmail.com
+dorflex;Analgésico;10;mg;bioclin;danilosousa100@hotmail.com
